@@ -1,7 +1,7 @@
 import NibzvlnContext from "./NibzvlnContext";
 
 const definedRules = {
-  numeric: () => (text) => /[^0-9]/g.test(text),
+  numeric: () => (text) => /^\d+$/.test(text),
 
   lowercase: () => (text) => /^([a-z]+\s*)+$/.test(text),
 
