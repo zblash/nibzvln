@@ -1,0 +1,42 @@
+{
+  "name": "nibzvln",
+  "version": "1.0.1",
+  "description": "dead simple reusable chainable validation library",
+  "main": "./dist/nibzvln.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildDev": "webpack --mode=development",
+    "build": "rimraf -r dist && webpack --mode=production",
+    "deploy": "yarn build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zblash/nibzvln.git"
+  },
+  "keywords": [
+    "js",
+    "validation",
+    "library"
+  ],
+  "author": "Yusuf Can Celik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zblash/nibzvln/issues"
+  },
+  "homepage": "https://github.com/zblash/nibzvln#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "glob": "^7.1.6",
+    "path": "^0.12.7",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0"
+  }
+}
