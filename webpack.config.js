@@ -14,6 +14,8 @@ module.exports = (env, arg) => {
     entry: entryPoints,
     mode: arg.mode,
     output: {
+      libraryTarget: "umd",
+      libraryl: "nibzvln",
       path: path.resolve(__dirname, "dist"),
       filename: "[name].js",
     },
