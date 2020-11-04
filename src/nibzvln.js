@@ -1,3 +1,5 @@
+import ProxyPolyfillBuilder from "proxy-polyfill/src/proxy";
+
 import NibzvlnContext from "./NibzvlnContext";
 
 const definedRules = {
@@ -13,6 +15,8 @@ const definedRules = {
 
   alphaNumeric: () => (text) => /^([a-zA-Z0-9 _-]+)$/i.test(text),
 
+  specialChars: () => (text) => !/^([a-zA-Z0-9 _-]+)$/i.test(text),
+
   email: () => (text) =>
     /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(text),
 
@@ -22,7 +26,7 @@ const definedRules = {
 let customRules = {};
 
 function contextProxy(context) {
-  return new Proxy(context, {
+  return new ProxyPolyfillBuilder(context, {
     get(obj, prop) {
       if (prop in obj) {
         return obj[prop];
