@@ -1,6 +1,6 @@
-import ProxyPolyfillBuilder from "proxy-polyfill/src/proxy";
-
 import NibzvlnContext from "./NibzvlnContext";
+import ProxyPolyfillBuilder from "proxy-polyfill/src/proxy";
+const proxyPolyfill = ProxyPolyfillBuilder();
 
 const definedRules = {
   numeric: () => (text) => /^\d+$/.test(text),
@@ -26,7 +26,7 @@ const definedRules = {
 let customRules = {};
 
 function contextProxy(context) {
-  return new ProxyPolyfillBuilder(context, {
+  return new proxyPolyfill(context, {
     get(obj, prop) {
       if (prop in obj) {
         return obj[prop];
