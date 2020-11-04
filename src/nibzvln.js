@@ -2,24 +2,61 @@ require("proxy-polyfill/proxy.min.js");
 import NibzvlnContext from "./NibzvlnContext";
 
 const definedRules = {
-  numeric: () => (text) => /^\d+$/.test(text),
+  numeric: function () {
+    return function (text) {
+      return /^\d+$/.test(text);
+    };
+  },
 
-  lowercase: () => (text) => /^([a-z]+\s*)+$/.test(text),
+  lowercase: function () {
+    return function (text) {
+      return /^([a-z]+\s*)+$/.test(text);
+    };
+  },
 
-  uppercase: () => (text) => /^([A-Z]+\s*)+$/.test(text),
+  uppercase: function () {
+    return function (text) {
+      return /^([A-Z]+\s*)+$/.test(text);
+    };
+  },
 
-  minLength: (min) => (text) => text.length >= min,
+  minLength: function (min) {
+    return function (text) {
+      return text.length >= min;
+    };
+  },
 
-  maxLength: (max) => (text) => text.length <= max,
+  maxLength: function (max) {
+    return function (text) {
+      return text.length <= max;
+    };
+  },
 
-  alphaNumeric: () => (text) => /^([a-zA-Z0-9 _-]+)$/i.test(text),
+  alphaNumeric: function () {
+    return function (text) {
+      return /^([a-zA-Z0-9 _-]+)$/i.test(text);
+    };
+  },
 
-  specialChars: () => (text) => !/^([a-zA-Z0-9 _-]+)$/i.test(text),
+  specialChars: function () {
+    return function (text) {
+      return !/^([a-zA-Z0-9 _-]+)$/i.test(text);
+    };
+  },
 
-  email: () => (text) =>
-    /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(text),
+  email: function () {
+    return function (text) {
+      return /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(
+        text
+      );
+    };
+  },
 
-  emptyOrNull: () => (text) => !text || 0 === text.length,
+  emptyOrNull: function () {
+    return function (text) {
+      return !text || 0 === text.length;
+    };
+  },
 };
 
 let customRules = {};

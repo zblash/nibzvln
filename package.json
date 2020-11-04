@@ -1,6 +1,6 @@
 {
   "name": "nibzvln",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "dead simple reusable chainable validation library",
   "main": "./dist/nibzvln.js",
   "scripts": {
