@@ -1,4 +1,4 @@
-import "proxy-polyfill";
+require("proxy-polyfill/proxy.min.js");
 import NibzvlnContext from "./NibzvlnContext";
 
 const definedRules = {
