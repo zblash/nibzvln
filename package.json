@@ -1,6 +1,6 @@
 {
   "name": "nibzvln",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "dead simple reusable chainable validation library",
   "main": "./dist/nibzvln.js",
   "scripts": {
@@ -40,6 +40,6 @@
     "webpack-cli": "^4.1.0"
   },
   "dependencies": {
-    "proxy-polyfill": "^0.3.2"
+    "es6-proxy-polyfill": "^2.1.0"
   }
 }
