@@ -1,5 +1,5 @@
+import "proxy-polyfill";
 import NibzvlnContext from "./NibzvlnContext";
-const Proxy = require("es6-proxy-polyfill");
 
 const definedRules = {
   numeric: () => (text) => /^\d+$/.test(text),
